@@ -1,0 +1,624 @@
+What is a browser and Server ?
+
+
+What makes JavaScript unique?
+There are at least three great things about JavaScript:
+
+1. Full integration with HTML/CSS.
+2. Simple things are done simply.
+3. Supported by all major browsers and enabled by default.
+
+Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it “under the hood”.
+
+Examples of such languages:
+
+1. CoffeeScript is “syntactic sugar” for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
+2. TypeScript is concentrated on adding “strict data typing” to simplify the development and support of complex systems. It is developed by Microsoft.
+3. Flow also adds data typing, but in a different way. Developed by Facebook.
+4. Dart is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. 
+   Developed by Google.
+5. Brython is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
+6. Kotlin is a modern, concise and safe programming language that can target the browser or Node.
+
+TO find a error in a java script code, open developer tools (E.g: console ) 
+Developer tools are potent; they have many features. To start, we’ll learn how to open them, look at errors, and run JavaScript commands.
+
+Google Chrome
+Open the page bug.html.
+
+There’s an error in the JavaScript code on it. It’s hidden from a regular visitor’s eyes, so let’s open developer tools to see it.
+
+Press F12 or, if you’re on Mac, then Cmd+Opt+J.
+
+The developer tools will open on the Console tab by default.
+
+
+JavaScript Fundementals 
+
+1.
+<script>
+  // it is the modern script, in the old script we have type script type eg: <script type="text" />
+</script>
+
+2. External scripts
+If we have a lot of JavaScript code, we can put it into a separate file.
+
+Script files are attached to HTML with the src attribute:
+
+<script src="/path/to/script.js"></script>
+
+3. 
+<script src="file.js">
+  alert(1); // the content is ignored, because src is set
+</script>
+4.
+Multiline comments start with a forward slash and an asterisk /* and end with an asterisk and a forward slash */.
+5.
+Use hotkeys!
+In most editors, a line of code can be commented out by pressing the Ctrl+/ hotkey for a single-line comment 
+and something like Ctrl+Shift+/ – for multiline comments (select a piece of code and press the hotkey). 
+ Mac, try Cmd instead of Ctrl and Option instead of Shift.
+ 
+ 6. Use Strict -  to make the code work in the modern mode.
+ 
+ This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: "use strict".
+
+  “use strict”
+  The directive looks like a string: "use strict" or 'use strict'. When it is located at the top of a script, the whole script works the “modern” way.
+
+----------------------------------------------------------------------------------------------------------
+7. Variables 
+
+To create a variable in JavaScript, use the let keyword.
+
+  let user = 'John'
+  , age = 25
+  , message = 'Hello';
+  
+  let user = 'John', age = 25, message = 'Hello';
+  
+  let user = 'John',
+  age = 25,
+  message = 'Hello';
+  
+  
+  var instead of let
+   In older scripts, you may also find another keyword: var instead of let:
+
+   var message = 'Hello';
+    
+	Variables named apple and APPLE are two different variables
+	
+	Constants
+	To declare a constant (unchanging) variable, use const instead of let:
+
+	const myBirthday = '18.04.1982';
+---------------------------------------------------------------------------------------------------------
+8. Data types
+
+	Number
+	let n = 123;
+	n = 12.345;
+
+	BigInt
+	In JavaScript, the “number” type cannot safely represent integer values larger than (253-1) (that’s 9007199254740991), or less than -(253-1) for negatives.
+
+	String
+	A string in JavaScript must be surrounded by quotes.
+
+	let str = "Hello";
+	let str2 = 'Single quotes are ok too';
+	let phrase = `can embed another ${str}`;
+---------	
+	Backticks - enable special functionality 
+	Backticks are “extended functionality” quotes. They allow us to embed variables and expressions into a string by wrapping them in ${…}, for example:
+
+	let name = "John";
+
+	// embed a variable
+	alert( `Hello, ${name}!` ); // Hello, John!
+	
+	// embed an expression
+	alert( `the result is ${1 + 2}` ); // the result is 3	
+----------	
+	Boolean (logical type)
+	The boolean type has only two values: true and false.
+
+	This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.
+------------	
+	The “null” value
+	The special null value does not belong to any of the types described above.
+
+	It forms a separate type of its own which contains only the null value:
+---------------
+	The typeof operator
+	The typeof operator returns the type of the operand. It’s useful when we want to process values of different types differently or just want to do a quick check.
+
+	A call to typeof x returns a string with the type name:
+	
+	You may also come across another syntax: typeof(x). It’s the same as typeof x
+	
+===========================================================================================================
+
+Interaction Alert, Prompt, Confirm
+
+alert
+ It shows a message and waits for the user to press “OK”.
+------	
+Prompt
+prompt
+The function prompt accepts two arguments:
+
+result = prompt(title, [default]);
+title
+The text to show the visitor.
+default
+An optional second parameter, the initial value for the input field.
+
+prompt
+shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null
+
+		let age = prompt('How old are you?', 100); // you can change the default value
+
+        alert(`You are ${age} years old!`); // You are 100 years old!
+		
+-----------------
+confirm
+The syntax:
+
+result = confirm(question);
+The function confirm shows a modal window with a question and two buttons: OK and Cancel.
+
+The result is true if OK is pressed and false otherwise.
+
+let age = confirm(Are you above 18 ?) ;
+-------
+There are two limitations shared by all the methods(Alert, Prompt, Confirm) above:
+
+The exact location of the modal window is determined by the browser. Usually, it’s in the center.
+The exact look of the window also depends on the browser. We can’t modify it.
+=================================================================================================
+Type Conversions	
+String Conversions 
+
+let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // now value is a string "true"
+alert(typeof value); // string
+-------------------
+Numeric Conversion
+Numeric conversion in mathematical functions and expressions happens automatically.
+
+For example, when division / is applied to non-numbers:
+
+alert( "6" / "2" ); // 3, strings are converted to numbers
+We can use the Number(value) function to explicitly convert a value to a number:
+
+let str = "123";
+alert(typeof str); // string
+
+let num = Number(str); // becomes a number 123
+
+alert(typeof num); // number
+--------------------
+Boolean Conversion
+Boolean conversion is the simplest one.
+
+It happens in logical operations (later we’ll meet condition tests and other similar things) but can also be performed explicitly with a call to Boolean(value).
+--------------------
+Operations 
+Maths
+The following math operations are supported:
+
+Addition +,
+Subtraction -,
+Multiplication *,
+Division /,
+Remainder %,
+Exponentiation **.
+
+----
+String concatenation with binary +
+Let’s meet the features of JavaScript operators that are beyond school arithmetics.
+
+Usually, the plus operator + sums numbers.
+
+But, if the binary + is applied to strings, it merges (concatenates) them:
+
+let s = "my" + "string";
+alert(s); // mystring
+----
+Note that if any of the operands is a string(in case of binary operator), then the other one is converted to a string too. 
+The binary + is the only operator that supports strings in such a way. 
+Other arithmetic operators work only with numbers and always convert their operands to numbers.
+
+Here’s the demo for subtraction and division:
+
+alert( 6 - '2' ); // 4, converts '2' to a number
+alert( '6' / '2' ); // 3, converts both operands to numbers
+
+=====================================================================================
+
+String comparison
+To see whether a string is greater than another, JavaScript uses the so-called “dictionary” or “lexicographical” order.
+
+In other words, strings are compared letter-by-letter.
+
+-----
+Comparison of different types
+When comparing values of different types, JavaScript converts the values to numbers.
+
+For example:
+
+alert( '2' > 1 ); // true, string '2' becomes a number 2
+alert( '01' == 1 ); // true, string '01' becomes a number 1
+--------
+A funny consequence
+It is possible that at the same time:
+
+Two values are equal.
+One of them is true as a boolean and the other one is false as a boolean.
+For example:
+
+let a = 0;
+alert( Boolean(a) ); // false
+
+let b = "0";
+alert( Boolean(b) ); // true
+
+alert(a == b); // true!
+From JavaScript’s standpoint, this result is quite normal. An equality check converts values using the numeric conversion (hence "0" becomes 0),
+ while the explicit Boolean conversion uses another set of rules.
+==================================================================================
+Conditional Statements 
+
+? Operator
+The syntax is:
+
+let result = condition ? value1 : value2;
+----
+if, if else, if elseif else
+
+========================================
+The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||
+======================================================================================
+Loops
+
+The “while” loop
+The while loop has the following syntax:
+
+while (condition) {
+  // code
+  // so-called "loop body"
+}
+Any expression or variable can be a loop condition, not just comparisons: the condition is evaluated and converted to a boolean by while.
+
+For instance, a shorter way to write while (i != 0) is while (i):
+
+let i = 3;
+while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+  alert( i );
+  i--;
+}
+-------------
+The “do…while” loop
+The condition check can be moved below the loop body using the do..while syntax:
+
+do {
+  // loop body
+} while (condition);
+---------------
+The “for” loop
+The for loop is more complex, but it’s also the most commonly used loop.
+
+It looks like this:
+
+for (begin; condition; step) {
+  // ... loop body ...
+}
+---------------
+Skipping parts
+Any part of for can be skipped.
+
+For example, we can omit begin if we don’t need to do anything at the loop start.
+
+Like here:
+
+let i = 0; // we have i already declared and assigned
+
+for (; i < 3; i++) { // no need for "begin"
+  alert( i ); // 0, 1, 2
+}
+We can also remove the step part:
+
+let i = 0;
+
+for (; i < 3;) {
+  alert( i++ );
+}
+This makes the loop identical to while (i < 3).
+
+We can actually remove everything, creating an infinite loop:
+
+for (;;) {
+  // repeats without limits
+}
+Please note that the two for semicolons ; must be present. Otherwise, there would be a syntax error.
+--------------------------
+The "switch" statement
+A switch statement can replace multiple if checks.
+
+It gives a more descriptive way to compare a value with multiple variants.
+
+The syntax
+The switch has one or more case blocks and an optional default.
+
+It looks like this:
+
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}
+
+Here the switch starts to compare a from the first case variant that is 3. The match fails.
+
+Then 4. That’s a match, so the execution starts from case 4 until the nearest break.
+
+If there is no break then the execution continues with the next case without any checks.*******
+-------------------------------
+Function Declaration
+To create a function we can use a function declaration.
+
+It looks like this:
+
+function showMessage() {
+  alert( 'Hello everyone!' );
+}
+function name(parameter1, parameter2, ... parameterN) {
+ // body
+}
+------------
+Local variables
+A variable declared inside a function is only visible inside that function.
+
+For example:
+
+function showMessage() {
+  let message = "Hello, I'm JavaScript!"; // local variable
+
+  alert( message );
+}
+
+showMessage(); // Hello, I'm JavaScript!
+
+alert( message ); // <-- Error! The variable is local to the function
+--------------
+Outer Variables 
+The function has full access to the outer variable. It can modify it as well.
+
+For instance:
+
+let userName = 'John';
+
+function showMessage() {
+  userName = "Bob"; // (1) changed the outer variable
+
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+alert( userName ); // John before the function call
+
+showMessage();
+
+alert( userName ); // Bob, the value was modified by the fun
+----------------
+The outer variable is only used if there’s no local one.
+
+If a same-named variable is declared inside the function then it shadows the outer one. 
+For instance, in the code below the function uses the local userName. The outer one is ignored:
+
+let userName = 'John';
+
+function showMessage() {
+  let userName = "Bob"; // declare a local variable
+
+  let message = 'Hello, ' + userName; // Bob
+  alert(message);
+}
+
+// the function will create and use its own userName
+showMessage();
+
+alert( userName ); // John, unchanged, the function did not access the outer variable
+==========================================================================================================
+
+Functions 
+It is possible to use return without a value. That causes the function to exit immediately.
+For example:
+
+function showMovie(age) {
+  if ( !checkAge(age) ) {
+    return;
+  }
+
+  alert( "Showing you the movie" ); // (*)
+  // ...
+}
+In the code above, if checkAge(age) returns false, then showMovie won’t proceed to the alert.
+
+----------
+A function with an empty return or without it returns undefined
+If a function does not return a value, it is the same as if it returns undefined:
+
+function doNothing() { /* empty */ }
+
+alert( doNothing() === undefined ); // true
+An empty return is also the same as return undefined:
+
+function doNothing() {
+  return;
+}
+
+alert( doNothing() === undefined ); // true
+
+-----
+We can copy a function to another variable:
+
+function sayHi() {   // (1) create
+  alert( "Hello" );
+}
+
+let func = sayHi;    // (2) copy
+
+func(); // Hello     // (3) run the copy (it works)!
+sayHi(); // Hello    //     this still works too (why wouldn't it)
+-----------
+Callback functions
+Let’s look at more examples of passing functions as values and using function expressions.
+
+We’ll write a function ask(question, yes, no) with three parameters:
+
+question
+Text of the question
+yes
+Function to run if the answer is “Yes”
+no
+Function to run if the answer is “No”
+The function should ask the question and, depending on the user’s answer, call yes() or no():
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+--------
+Another special feature of Function Declarations is their block scope.
+
+In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+
+For instance, 
+let’s imagine that we need to declare a function welcome() depending on the age variable that we get during runtime. And then we plan to use it some time later.
+
+If we use Function Declaration, it won’t work as intended:
+
+let age = prompt("What is your age?", 18);
+
+// conditionally declare a function
+if (age < 18) {
+
+  function welcome() {
+    alert("Hello!");
+  }
+
+} else {
+
+  function welcome() {
+    alert("Greetings!");
+  }
+
+}
+
+// ...use it later
+welcome(); // Error: welcome is not defined
+-----------
+Here’s another example:
+
+let age = 16; // take 16 as an example
+
+if (age < 18) {
+  welcome();               // \   (runs)
+                           //  |
+  function welcome() {     //  |
+    alert("Hello!");       //  |  Function Declaration is available
+  }                        //  |  everywhere in the block where it's declared
+                           //  |
+  welcome();               // /   (runs)
+
+} else {
+
+  function welcome() {
+    alert("Greetings!");
+  }
+}
+
+// Here we're out of curly braces,
+// so we can not see Function Declarations made inside of them.
+
+welcome(); // Error: welcome is not defined
+
+----
+What can we do to make welcome visible outside of if?
+
+The correct approach would be to use a Function Expression and assign welcome to the variable that is declared outside of if and has the proper visibility.
+
+This code works as intended:
+
+let age = prompt("What is your age?", 18);
+
+let welcome;
+
+if (age < 18) {
+
+  welcome = function() {
+    alert("Hello!");
+  };
+
+} else {
+
+  welcome = function() {
+    alert("Greetings!");
+  };
+
+}
+
+welcome(); // ok now
+-----------------------
+Arrow functions
+It’s called “arrow functions”, because it looks like this:
+
+**let func = (arg1, arg2, ..., argN) => expression;
+
+**let func = function(arg1, arg2, ..., argN) {
+  return expression;
+};
+let sum = (a, b) => a + b;
+
+/* This arrow function is a shorter form of:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+alert( sum(1, 2) ); // 3
+
+-----------------------
+Multiline Arrow Functions
+let sum = (a, b) => {  // the curly brace opens a multiline function
+  let result = a + b;
+  return result; // if we use curly braces, then we need an explicit "return"
+};
+
+alert( sum(1, 2) ); // 3
+==========================================================================================

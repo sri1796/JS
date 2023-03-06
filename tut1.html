@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+        .bg-container {
+        background-color: #f1f5f8;
+        height: 100vh;
+        }
+        h2 {
+        font-family: "Roboto";
+        font-size: 50px;
+        font-weight: 800;
+        }
+        p {
+        font-size: 75px;
+        font-weight: 900;
+        }
+        .button {
+        background-color: #f1f5f8;
+        border-width: 2px;
+        border-color: black;
+        border-radius: 7px;
+        margin: 8px;
+        padding: 5px;
+        }       
+    </style>
+    <script>
+        function changeHeading()
+        {
+            document.getElementById('heading').textContent = 'Welcome Srikanth !!' ;
+            document.getElementById('heading').style.color = "blue";
+        }
+        
+        // alert("Hi Sreekanth, Welcome !!") ;
+
+
+        // // variables declaration
+        // let message = "Good Morning" ;
+
+        // alert(`${message}`);  // back ticks enable embed functionality if we are using ` ${}`
+        
+        //alert(message) ;
+
+        //let age = prompt('How old are you?', 100);
+
+        // alert(6/'2');
+
+        //let age = confirm("Are you above 18 ?") ;
+        // -=================================================================//
+        // CONDITIONAL STATEMENTS //
+        // let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+        // if (year == 2015) alert( 'You are right!' );
+        // else 
+        // alert('No, You are wrong !!')
+
+        // let ans = prompt('What is the “official” name of JavaScript?', '');
+
+        // if (ans == 'ECMAScript')
+        // alert('Right!') ;
+        // else
+        // alert('You don’t know? ECMAScript!')
+
+        // let a = prompt('enter the value of a :', '');
+        // let b = prompt('enter the value of b :','');
+        // let result = (a+b<4) ? 'Below' : 'Over'
+        // alert(result) ;
+            //***************************** Use of ? Operator in elseif *******************************************//
+
+            
+
+        //    /*function choice1(select) {
+        //             alert(select.options[select.selectedIndex].text);
+        //         }*\
+            
+                    // let msg = (login == 'Employee') ? 'Hello' :
+                    // (login == 'Director') ? 'Greetings' :
+                    // (login == '') ? 'No login' : '';
+
+                    // alert(msg) ;
+
+            // *** The precedence of NOT ! is the highest of all logical operators, so it always executes first, before && or ||
+
+
+        //       ******************************Callback functions***************************************
+        // Let’s look at more examples of passing functions as values and using function expressions.
+
+        // We’ll write a function ask(question, yes, no) with three parameters:
+
+        // question
+        // Text of the question
+        // yes
+        // Function to run if the answer is “Yes”
+        // no
+        // Function to run if the answer is “No”
+        // The function should ask the question and, depending on the user’s answer, call yes() or no():
+
+        // function ask(question, yes, no) {
+        // if (confirm(question)) yes()
+        // else no();
+        // }
+
+        //     function showOk() {
+        //         alert( "You agreed." );
+        //         }
+
+        //     function showCancel() {
+        //         alert( "You canceled the execution." );
+        //         }
+
+        //     // usage: functions showOk, showCancel are passed as arguments to ask
+        //         ask("Do you agree?", showOk, showCancel);
+
+
+                let age = prompt("Are you above 18 ?", 18); // take 16 as an example
+
+                if (age < 18) {
+                welcome();               // \   (runs)
+                                        //  |
+                function welcome() {     //  |
+                    alert(`Hello! you are only ${age}, go back`);       //  |  Function Declaration is available
+                }                        //  |  everywhere in the block where it's declared
+                                        //  |
+                               // /   (runs)
+
+                } else {
+                    
+                function welcome() {
+                    alert("Greetings!");
+                }
+                welcome(); 
+                }  
+                
+                // let ask = (question,yes,no) => {confirm(question) ? yes():no()}
+
+                // ask(
+                // "Do you agree?",
+                // () => alert("You agreed.") ,
+                // () => alert("You canceled the execution.")
+                // );
+                
+                function increment(){
+                    let counterValue = document.getElementById("counterVal") ;
+                    let inr = parseInt(counterValue.textContent) + 1;
+                    console.log(inr);
+                    counterValue.textContent = inr ;
+                    if(inr > 0){
+                        counterValue.style.color = 'green';
+                    }
+                    else if(inr < 0){
+                        counterValue.style.color = 'red';
+                    }
+                    else 
+                    counterValue.style.color = 'black';
+                }
+                function decrement(){
+                    let counterValue = document.getElementById("counterVal") ;
+                    let dcr = parseInt(counterValue.textContent) - 1;
+                    console.log(dcr);
+                    counterValue.textContent = dcr ;
+                    if(dcr > 0){
+                        counterValue.style.color = 'green';
+                    }
+                    else if(dcr < 0){
+                        counterValue.style.color = 'red';
+                    }
+                    else 
+                    counterValue.style.color = 'black';
+                }
+                function reset(){
+                    let counterValue = document.getElementById("counterVal") ;
+                    counterValue.textContent = 0 ;
+                    counterValue.style.color = 'black';
+                }
+    </script> 
+</head>
+<body>
+    <h1 id="heading">Hello</h1>
+    <button onclick="changeHeading()">Chage the heading</button>
+
+    <!-- <select id="test-dropdown" onchange="choice1(this)">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        </select>   -->
+        <div class="bg-container text-center d-flex flex-column justify-content-center">
+        <h2>Counter</h2>
+        <p class="counter-value" id="counterVal">0</p>
+        <button onclick="increment()" id="increment" class="button">+</button>
+        <button onclick="decrement()" id="decrement" class="button">-</button>
+        <button onclick="reset()" id="reset" class="button">reset</button>
+        </div>
+</body>    
+</body>
+</html>

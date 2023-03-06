@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        p {
+            font-family: "helvetica neue", helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px solid rgba(0, 0, 200, 0.6);
+            background: rgba(0, 0, 200, 0.3);
+            color: rgba(0, 0, 200, 0.6);
+            box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
+            border-radius: 10px;
+            padding: 3px 10px;
+            display: inline-block;
+            cursor: pointer;
+            }
+            h1{
+                text-align: center; 
+            }
+            /* body
+            {
+                background-image: url(./images/jaromir-kavan-3FA80_d8rHo-unsplash.jpg);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            } */
+            
+    </style>
+</head>
+<body>
+    <h1></h1>
+    
+    <!-- <img src="./images/jaromir-kavan-3FA80_d8rHo-unsplash.jpg">  -->
+    
+    
+    <p>
+        Player 1: Sreekanth Karanam
+    </p>
+
+    <button>Change user</button>
+
+    <script>
+        const Heading = document.querySelector('h1');
+        Heading.textContent = "Hello !!" ;
+
+        const para = document.querySelector('p');   
+        para.addEventListener('click', updateName);
+        function updateName() {
+        const name = prompt('Enter a new name');
+        para.textContent = `Player 1: ${name}`;
+        }
+        /* ----------------------------------------------------------*/
+        // const myImage = document.querySelector("img");
+
+        // myImage.onclick = () => {
+        // const mySrc = myImage.getAttribute("src");
+        // if (mySrc === "./images/jaromir-kavan-3FA80_d8rHo-unsplash.jpg") {
+        //     myImage.setAttribute("src", "./images/pexels-erik-mclean-4061662.jpg");
+        // } else {
+        //     myImage.setAttribute("src", "./images/jaromir-kavan-3FA80_d8rHo-unsplash.jpg");
+        // }
+        // };
+        /* ----------------------------------------------------------*/
+        
+
+        let myButton = document.querySelector("button");
+        let myHeading = document.querySelector("h1");
+        
+
+            
+        function setUserName() {
+        const myName = prompt("Please enter your name.");
+        if (!myName) {
+            setUserName();
+            } else {
+            localStorage.setItem("name", myName);
+            myHeading.textContent = `Mozilla is cool, ${myName}`;
+            }
+        }
+
+
+        if (!localStorage.getItem("name")) {
+                setUserName();
+                } else {
+                let storedName = localStorage.getItem("name");
+                myHeading.textContent = `Mozilla is cool, ${storedName}`;
+                }
+                
+                myButton.onclick = function() { 
+                    setUserName();
+                }       
+    </script>
+
+</body>
+</html>

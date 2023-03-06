@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./additionGame.js" defer></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+            .image {
+                width: 360px;
+                height: 280px;
+            }
+
+            .bg-container {
+                background-color: #f5f7fa;
+            }
+
+            .number {
+                color: #323f4b;
+                background-color: #cbd2d9;
+                font-family: "Roboto";
+                font-size: 30px;
+                font-weight: bold;
+                border-style: solid;
+                border-width: 8px;
+                border-color: #e4e7eb;
+                border-radius: 12px;
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            .operator {
+                color: #c4c4c4;
+                font-family: "Roboto";
+                font-size: 40px;
+            }
+
+            .user-input {
+                text-align: center;
+                color: #323f4b;
+                background-color: #cbd2d9;
+                font-family: "Roboto";
+                font-size: 30px;
+                font-weight: bold;
+                width: 142px;
+                height: 60px;
+                border-style: solid;
+                border-width: 8px;
+                border-color: #e4e7eb;
+                border-radius: 12px;
+                margin: 20px;
+            }
+
+            .game-result {
+                color: #070707;
+                background-color: #1a71f3;
+                font-family: "Roboto";
+                font-size: 24px;
+                font-weight: 500;
+            }        
+    </style>
+</head>
+<body>
+    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/sum-of-two-numbers-img.png" class="image" />
+    <div class="bg-container">
+    <span id="firstNumber" class="number"></span>
+    <span class="operator">+</span>
+    <span id="secondNumber" class="number"></span>
+    <span class="operator">=</span>
+    <input type="text" id="userInput" class="user-input"/>
+    <p id="result" class="game-result">Result: </p>
+    <button id="checkButton" onclick="checkResult()">Check</button>
+    <button id="restartButton" onclick="restartGame()">Restart</button>
+    </div>
+   
+</body>
+</html>

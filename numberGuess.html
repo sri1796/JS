@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+        resize: none;
+        text-align: center;}
+        p {
+            font-family: "helvetica neue", helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+            }
+            h1{
+                text-align: center; 
+            }
+            button{
+            text-align: center;
+            border: 2px solid rgba(0, 0, 200, 0.6);
+            background: rgba(0, 0, 200, 0.3);
+            color: rgba(0, 0, 200, 0.6);
+            box-shadow: 1px 1px 2px rgba(0, 0, 200, 0.4);
+            border-radius: 10px;
+            padding: 3px 10px; 
+            }
+            .bg-container {
+                                background-color: #f1f5f8;
+                                height: 80vh;
+                                width: 80vh;
+        }
+    </style>
+    <script src="./numberGuess.js" defer></script>
+</head>
+<body>
+    <div class = "bg-container">
+        <h1>
+            Number guessing game
+        </h1>
+        <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+    
+        <div class="resultParams">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
+    
+        <label for="guessField">Enter the guessing number: </label>
+        <input type="number" id="guessField" class="guessField" />
+        <button onclick="checkGuess()" class="guessSubmit">Submit</button>
+    </div>
+    
+    
+</body>
+
+</html>

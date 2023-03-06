@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+ 
+ .dark-background {
+   background-color: #0b0b0b;
+ }
+  
+ .bulb-image {
+   width: 150px;
+ }
+  
+ .cat-image {
+   width: 300px;
+ }
+  
+ .switch-board {
+   width: 294px;
+   height: 139px;
+   background-color: #7b8794;
+   border-radius: 12px;
+   padding-top: 32px;
+   padding-bottom: 32px;
+   padding-left: 16px;
+   padding-right: 16px;
+   margin: 16px;
+ }
+  
+ .switch-status {
+   font-family: "Roboto";
+   font-weight: 500;
+   font-size: 24px;
+   color: #ffffff;
+   margin-bottom: 24px;
+ }
+  
+ .on-switch {
+   font-family: "Roboto";
+   font-weight: bold;
+   font-size: 24px;
+   color: #ffffff;
+   border-radius: 8px;
+   width: 99px;
+   height: 44px;
+   margin-left: 16px;
+   background-color: #cbd2d9;
+ }
+  
+ .off-switch {
+   font-family: "Roboto";
+   font-weight: bold;
+   font-size: 24px;
+   color: #ffffff;
+   border-radius: 8px;
+   width: 99px;
+   height: 44px;
+   background-color: #e12d39;
+ }        
+    </style>
+    <script src="./tut3.js" defer></script>
+</head>
+
+<body>
+    <div class="dark-background text-center">
+        <div>
+          <img id="bulbImage"
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png"
+            class="bulb-image"
+          />
+        </div>
+        <div>
+          <img id="catImage"
+            src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png"
+            class="cat-image"
+          />
+        </div>
+        <div class="d-flex flex-row justify-content-center pt-5">
+          <div class="switch-board">
+            <h1 class="switch-status" id="switch_heading">Switched On</h1>
+            <button class="off-switch" id="offSwitch" onclick="switchLightOff()">OFF</button>
+            <button class="on-switch" id="onSwitch" onclick="switchLightOn()">ON</button>
+          </div>
+        </div>
+      </div>    
+</body>
+</html>
